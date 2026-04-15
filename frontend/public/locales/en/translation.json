@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "home": "Home",
+    "browse": "Browse Profiles",
+    "dashboard": "My Dashboard",
+    "interests": "My Interests",
+    "profile": "My Profile",
+    "login": "Login",
+    "register": "Register Free",
+    "logout": "Logout"
+  },
+  "hero": {
+    "title": "Find Your Perfect Life Partner",
+    "subtitle": "Verified Matches. Real Connections. Zero Fake Profiles.",
+    "cta": "Register Free",
+    "login": "Already a member? Login"
+  },
+  "features": {
+    "verified": "100% Verified Profiles",
+    "verifiedDesc": "Every profile is manually verified. No fakes allowed.",
+    "privacy": "Privacy First",
+    "privacyDesc": "Photos blurred until mutual interest. You control who sees you.",
+    "smart": "Smart Matching",
+    "smartDesc": "AI-powered compatibility scores based on values, lifestyle & goals.",
+    "free": "Free to Connect",
+    "freeDesc": "Send interest and connect for free. No hidden paywalls."
+  },
+  "browse": {
+    "title": "Browse Profiles",
+    "filter": "Filter Profiles",
+    "noProfiles": "No profiles found. Try adjusting filters."
+  },
+  "interest": {
+    "send": "Send Interest",
+    "sent": "Interest Sent ✓",
+    "match": "It's a Match! 🎉"
+  }
+}
