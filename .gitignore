@@ -1,0 +1,32 @@
+# Dependency directories
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Environment variables (Crucial for security)
+.env
+backend/.env
+frontend/.env
+*.env.local
+
+# Build directories
+frontend/dist/
+frontend/build/
+
+# Media uploads (To prevent local test images from being pushed)
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vite specific
+frontend/node_modules/.vite/

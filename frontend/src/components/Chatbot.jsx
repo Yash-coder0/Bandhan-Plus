@@ -11,8 +11,6 @@ const Chatbot = () => {
   const location = useLocation();
   const messagesEndRef = useRef(null);
 
-  // Hidden on chat interface
-  if (location.pathname.startsWith('/chat/')) return null;
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -55,6 +53,9 @@ const Chatbot = () => {
       setMessages(prev => [...prev, { sender: 'bot', text: botResp }]);
     }, 600);
   };
+
+  // Hidden on chat interface
+  if (location.pathname.startsWith('/chat/')) return null;
 
   return (
     <>

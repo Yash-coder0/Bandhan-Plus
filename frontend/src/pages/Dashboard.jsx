@@ -145,7 +145,7 @@ const DEMO_PROFILES = [
 ];
 
 const Dashboard = () => {
-  const { profile } = useAuth();
+  const { profile, user } = useAuth();
   const [suggested, setSuggested] = useState([]);
   const [stats, setStats] = useState({ received: 0, sent: 0, matches: 0 });
   const [loading, setLoading] = useState(true);
@@ -185,7 +185,7 @@ const Dashboard = () => {
     { icon: Star, label: 'Trust Score', value: `${profile?.trustScore || 75}%`, color: 'text-amber-600 bg-amber-100', trend: '+5% this week' },
   ];
 
-  const greetingName = profile?.name ? profile.name.split(' ')[0] : 'Priya';
+  const greetingName = profile?.name ? profile.name.split(' ')[0] : (user?.email ? user.email.split('@')[0].charAt(0).toUpperCase() + user.email.split('@')[0].slice(1) : 'User');
   const trustScore = profile?.trustScore || 75;
 
   return (
@@ -218,7 +218,7 @@ const Dashboard = () => {
           {/* Right floating preview (desktop only) */}
           <div className="hidden lg:block relative z-10 mr-10">
             <div className="w-48 h-56 bg-white/10 backdrop-blur-md border border-white/30 rounded-2xl p-2 transform rotate-6 shadow-2xl">
-              <img src={suggested.length > 0 && suggested[0].photos?.[0]?.startsWith('http') ? suggested[0].photos[0] : (suggested.length > 0 && suggested[0].photos?.[0] ? `${import.meta.env.VITE_API_URL.replace('/api', '')}/uploads/${suggested[0].photos[0]}` : 'https://ui-avatars.com/api/?name=User&background=C0392B&color=fff&size=200')} alt="Preview" className="w-full h-full object-cover rounded-xl" />
+              <img src={suggested.length > 0 && suggested[0].photos?.[0]?.startsWith('http') ? suggested[0].photos[0] : (suggested.length > 0 && suggested[0].photos?.[0] ? `${import.meta.env.VITE_API_URL.replace('/api', '')}/uploads/${suggested[0].photos[0]}` : `https://ui-avatars.com/api/?name=${encodeURIComponent(suggested[0]?.name || 'Match')}&background=C0392B&color=fff&size=200`)} alt="Preview" className="w-full h-full object-cover rounded-xl" />
             </div>
             {/* Decorative element behind */}
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/20 blur-3xl rounded-full pointer-events-none"></div>
